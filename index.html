@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<!--
+homework 7, dynamic multiplication table
+Robert Wentzell, UMass Lowell Computer Science, rwentzel@cs.uml.edu
+Copyright (c) 2020 by Robert Wentzell. All rights reserved. May be
+freely
+copied or excerpted for educational purposes with credit to the
+author.
+updated by Robert Wentzell 11/27/2020
+-->
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/dark-hive/jquery-ui.min.css">
+
+ <link rel="stylesheet" href="css/assignment7.css">
+</head>
+<body>
+ <div class="container-fluid">
+   <div class="row">
+     <div class="col-md-12">
+       <h1 class="name">
+         <span class="highlight_black">Assignment #7</span>
+       </h1>
+     </div>
+     <div class="col-md-3"></div>
+     <div class="col-md-6">
+       <div class="highlight_centered">Enter four numbers (range -50 to 50)</div>
+     </div>
+     <div class="col-md-3"></div>
+   </div>
+
+   <br>
+
+
+   <div class="row">
+     <div class="col-md-1"></div>
+     <div class="col-md-4">
+       <!-- help with the form:
+       http://www.w3schools.com/html/html_forms.asp
+-->
+       <div class="highlight_centered_margins">
+         <form id="mult_form" name="mult_form" method="GET">
+           <div>
+             <label>Starting horizontal number: </label>
+             <input type="number" id="horiz_start" name="horiz_start" value="0" required>
+             <div id="slider_hor_start"></div>
+
+           </div>
+
+           <div>
+             <label>Ending horizontal number: </label>
+             <input type="number" id="horiz_end" name="horiz_end" value="0" required>
+             <div id="slider_hor_end"></div>
+
+           </div>
+
+           <div>
+             <label>Starting vertical number: </label>
+             <input type="number" id="vert_start" name="vert_start" value="0" required>
+             <div id="slider_vert_start"></div>
+
+           </div>
+
+           <div>
+             <label>Ending vertical number: </label>
+             <input type="number" id="vert_end" name="vert_end" value="0" required>
+             <div id="slider_vert_end"></div>
+
+           </div>
+           <input id="button_submit" class="submit_button" type="submit" onClick="save_tab();" value="Save Table">
+         </form>
+
+         <!-- Error messages  -->
+         <div id="warning_msg"></div>
+
+       </div>
+     </div>
+
+     <div class="col-md-5">
+       <div id="multiplication_table"></div>
+     </div>
+
+     <div class="col-md-1"></div>
+   </div>
+
+   <br><br>
+
+   <div class="row">
+     <div class="col-md-1"></div>
+
+     <!-- tabbed tables -->
+     <div class="col-md-10">
+       <div class="highlight_centered">You may also save up to 24 multiplication tables.
+       They will appear below this line when the "Save Table" button is pressed.</div>
+
+       <br><br>
+
+
+       <div id="tabs">
+         <ul>
+         </ul>
+       </div>
+     </div>
+
+     <div class="col-md-1"></div>
+   </div>
+
+   <br><br><br>
+
+
+</div>
+
+
+ <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+ <script type='text/javascript' src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
+ <script type='text/javascript' src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/additional-methods.js"></script>
+ <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+ <script type='text/javascript' src="js/table.js"></script>
+ <script>
+   $( document ).ready(function() {
+       slider();
+       validate();
+       auto_submit();
+   });
+ </script>
+</body>
+</html>

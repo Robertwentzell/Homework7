@@ -1,0 +1,275 @@
+﻿/* homework 7, dynamic multiplication table
+ Robert Wentzell, UMass Lowell Computer Science, rwentzel@cs.uml.edu
+ Copyright (c) 2020 by Robert Wentzell. All rights reserved. May be
+freely
+ copied or excerpted for educational purposes with credit to the
+author.
+ updated by Robert Wentzell 11/27/2020 */
+
+
+body {
+    background-color: #000000;
+    background-image: url('../img/beach.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    font-family: "Advent Pro";
+}
+
+    body > .container {
+        padding: 65px 10px 0;
+    }
+
+    body > .row {
+        margin: 10px;
+    }
+
+html {
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.center_text_images {
+    margin: auto;
+    text-align: center;
+}
+
+
+input {
+    color: black;
+    font-family: "Advent Pro";
+    font-size: 70%;
+    font-weight: 900;
+    text-align: center;
+    width: 50px;
+}
+
+
+label {
+    display: inline-block;
+    float: left;
+    font-family: "Advent Pro";
+    font-size: 70%;
+    font-weight: 900;
+    margin-top: 6px;
+    text-align: right;
+    width: 250px;
+}
+
+input[type=submit] {
+    width: 150px;
+}
+
+div form input.submit_button {
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+
+    tbody > tr > td {
+        background-color: blue;
+        border: 3px solid black;
+        color: white;
+        height: 25px;
+        font-family: "Advent Pro";
+        font-size: 100%;
+        font-weight: 900;
+        text-align: center;
+        width: 25px;
+    }
+
+    tbody > tr:first-child > td {
+        background-color: purple;
+        color: white;
+    }
+
+    tbody > tr > td:first-child {
+        background-color: purple;
+        color: white;
+    }
+
+    tbody > tr:first-child > td:first-child {
+        background-color: #ffffff;
+        border-top: none;
+        border-left: none;
+        color: black;
+        opacity: 0;
+    }
+
+#warning_msg {
+    color: red;
+    font-family: "Advent Pro";
+    font-size: 70%;
+    font-style: italic;
+    font-weight: 900;
+}
+
+
+.warning_class {
+    padding: 5px;
+}
+
+
+.error {
+    color: red;
+    font-family: "Advent Pro";
+    font-size: 60%;
+    font-style: italic;
+    font-weight: 900;
+    text-align: center;
+}
+
+input.error {
+    border: 3px solid red;
+}
+
+
+.about {
+    color: white;
+    text-align: center;
+}
+
+.center_text {
+    color: white;
+    font-family: "Advent Pro";
+    font-size: 200%;
+    font-weight: 900;
+    text-align: center;
+}
+
+.center_text_nohighlight {
+    color: black;
+    font-size: 200%;
+    text-align: center;
+}
+
+.center_text_small {
+    color: white;
+    font-family: "Advent Pro";
+    font-size: 120%;
+    font-weight: 900;
+    text-align: center;
+}
+
+h1.name {
+    color: white;
+    font-family: "Ubuntu";
+    font-size: 750%;
+    text-align: center;
+}
+
+.highlight {
+    background-color: black;
+}
+
+
+.highlight_black {
+
+    color: black;
+    font-family: "Sigmar One";
+    font-size: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.highlight_centered {
+    background-color: black;
+    color: white;
+    font-family: "Advent Pro";
+    font-size: 200%;
+    font-weight: 900;
+    text-align: center;
+}
+
+.highlight_centered_margins {
+    background-color: black;
+    color: white;
+    font-family: "Advent Pro";
+    font-size: 200%;
+    font-weight: 900;
+    margin: 10px;
+    text-align: center;
+}
+
+.highlight_left_aligned {
+    background-color: black;
+    color: white;
+    font-family: "Advent Pro";
+    font-size: 200%;
+    font-weight: 900;
+    text-align: left;
+}
+
+.highlight_right_aligned {
+    background-color: black;
+    color: white;
+    font-family: "Advent Pro";
+    font-size: 200%;
+    font-weight: 900;
+    margin-right: -20px;
+    text-align: right;
+}
+
+.highlight_text_underline {
+    background: black;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.highlight_text_underline_centered {
+    background-color: black;
+    color: white;
+    font-family: "Advent Pro";
+    font-size: 200%;
+    font-weight: 900;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.left_align {
+    color: white;
+    text-align: left;
+    font-family: "Advent Pro";
+    font-size: 200%;
+}
+
+.right_align {
+    color: white;
+    text-align: left;
+    font-family: "Advent Pro";
+    font-size: 200%;
+}
+
+.white_text {
+    background-color: black;
+    color: white;
+    font-family: "Advent Pro";
+    font-size: 200%;
+}
+
+/*
+    dropdown menu stuff
+    https://stackoverflow.com/questions/8878033/how-to-make-twitter-bootstrap-menu-dropdown-on-hover-rather-than-click
+
+ */
+.dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    margin-top: -1px;
+}
+
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
