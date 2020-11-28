@@ -205,8 +205,6 @@ function validate() {
     },
 
     onkeyup: function( element, event ) {
-      // Call the auto submit function on keyup, so the user does not have to
-      // press the enter button.
       auto_submit();
     }
   });
